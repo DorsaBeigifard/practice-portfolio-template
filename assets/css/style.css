@@ -1,0 +1,444 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.clearfix::after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+html {
+  font-size: 62.5%;
+}
+@font-face {
+  font-family: "heebo";
+  src: url(../fonts/heebo.ttf);
+}
+@font-face {
+  font-family: "heebo extrabold";
+  src: url(../fonts/heeboextrabold.ttf);
+}
+:root {
+  --general-font-size: 1.6rem;
+  --heading-font-size: 4.4rem;
+  --post-title-font-size: 2.6rem;
+  --section-font-size: 2.2rem;
+  --category-font-size: 2rem;
+  --menu-font-size: 2rem;
+  --white-color: #fff;
+  --light-blue-color: #edf7fa;
+  --red-color: #ff6464;
+  --light-grey-color: #8695a4;
+  --dark-blue-color: #142850;
+  --border-bottom-color: #e0e0e0;
+  --heading-font-weight: 700;
+  --text-font-weight: 400;
+  --menu-font-weight: 500;
+  --big-spacing: 4rem;
+  --spacing: 2rem;
+  --bold-font: "heebo extrabold";
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "heebo";
+  color: var(--dark-blue-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: var(--general-font-size);
+}
+
+/* header */
+.header {
+  font-size: 2rem;
+  font-weight: var(--menu-font-weight);
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 2.7rem 10rem;
+}
+.menu-icon {
+  display: none;
+  width: 30px;
+  height: auto;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3.3rem;
+}
+/* .menu > li {
+  float: left;
+  margin-left: 3.3rem;
+} */
+.menu a {
+  color: var(--dark-blue-color);
+}
+.menu a:hover {
+  color: var(--red-color);
+}
+
+/* main layout */
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 8.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* banner */
+.banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+}
+.info > h1 {
+  font-size: var(--heading-font-size);
+  margin-bottom: var(--big-spacing);
+  font-family: var(--bold-font);
+}
+.info span {
+  display: block;
+}
+.info > p {
+  text-align: justify;
+  width: 80%;
+  margin-bottom: var(--big-spacing);
+}
+.button {
+  background-color: var(--red-color);
+  width: 20.8rem;
+  height: 4.7rem;
+  border-radius: 5px;
+  font-size: var(--menu-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.button a {
+  color: var(--white-color);
+}
+.banner img {
+  width: 24.3rem;
+  height: 24.3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: -8px 10px 0 var(--light-blue-color);
+}
+
+/* recent posts */
+.full-width {
+  width: 100%;
+  background-color: var(--light-blue-color);
+}
+.full-width .container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.recent-posts {
+  width: 100%;
+  background-color: var(--light-blue-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-posts .top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing);
+}
+.recent-posts .top > a {
+  margin-left: auto;
+  color: #00a8cc;
+  font-size: var(--general-font-size);
+}
+
+.recent-posts .post-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.recent-posts .post {
+  flex: 1 1 50%;
+  background-color: var(--white-color);
+  padding: 3rem;
+  border-radius: 5px;
+  margin-right: var(--big-spacing);
+}
+
+.recent-posts .top > h2 {
+  font-size: var(--section-font-size);
+  font-weight: lighter;
+}
+
+.post:last-child {
+  margin-right: 0;
+}
+
+.post article > h2 {
+  font-size: var(--post-title-font-size);
+  font-family: var(--bold-font);
+  margin-bottom: 20px;
+}
+
+.post .date {
+  float: left;
+  padding-right: 3rem;
+  border-right: 1px solid black;
+  margin-right: 3rem;
+}
+
+.post .description {
+  margin-top: 2rem;
+  text-align: justify;
+}
+
+/* featured work */
+.featured-works .container {
+  padding-top: 3rem;
+  gap: var(--big-spacing);
+}
+.featured-works .container > h2 {
+  font-size: var(--section-font-size);
+  font-weight: lighter;
+}
+
+.work {
+  padding-bottom: var(--spacing);
+  border-bottom: 1px solid var(--border-bottom-color);
+}
+
+.work article {
+  display: flex;
+  flex-direction: row;
+  flex: 0 1 100%;
+}
+.work article > img {
+  width: 24.6rem;
+  height: 18rem;
+  border-radius: 5px;
+  /* float: left; */
+  margin-right: var(--big-spacing);
+}
+.work article > h2 {
+  font-size: var(--post-title-font-size);
+  font-family: var(--bold-font);
+  margin-bottom: 20px;
+}
+.work .year {
+  font-size: var(--category-font-size);
+  background-color: var(--dark-blue-color);
+  font-family: var(--bold-font);
+  border-radius: 16px;
+  color: var(--white-color);
+  display: inline-block;
+  width: 7rem;
+  text-align: center;
+  margin-right: 3rem;
+}
+.work .category {
+  color: var(--light-grey-color);
+  font-size: var(--category-font-size);
+  display: inline-block;
+}
+.work .description {
+  margin-top: 2rem;
+  text-align: justify;
+}
+
+/* footer */
+.footer {
+  width: 80%;
+  height: 18rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.socials > ul {
+  display: flex;
+  gap: var(--big-spacing);
+  justify-content: center;
+  align-items: center;
+  padding-inline-start: 0;
+}
+
+.socials img {
+  width: 30px;
+  height: auto;
+}
+.copyright {
+  text-align: center;
+}
+
+/* For Landscape and Tablets */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  :root {
+    --big-spacing: 1.5rem;
+    --section-font-size: 1.6rem;
+    --category-font-size: 1.5rem;
+    --post-title-font-size: 1.8rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  /* banner */
+  .banner {
+    gap: 15%;
+  }
+  .info > h1 {
+    font-size: clamp(3.5rem, (0.5rem + 2vw), 4.4rem);
+  }
+
+  .button {
+    width: 18rem;
+    height: 4rem;
+    font-size: 1.8rem;
+  }
+  .profile-image {
+    padding-top: 70px;
+  }
+  .work .year {
+    width: 5rem;
+  }
+}
+
+/* For Mobile and Large Phones */
+@media only screen and (max-width: 767px) {
+  :root {
+    --general-font-size: 1.4rem;
+    --heading-font-size: 3.2rem;
+    --post-title-font-size: 2.2rem;
+    --section-font-size: 1.8rem;
+    --category-font-size: 1.6rem;
+    --big-spacing: 2rem;
+    --spacing: 1.5rem;
+  }
+  .header {
+    flex: none;
+    padding: 2.7rem 2rem;
+  }
+  .menu-nav {
+    display: none;
+  }
+  .menu-icon {
+    display: inline-block;
+  }
+  .container {
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .banner .profile-image {
+    order: -1;
+  }
+  .banner .profile-image > img {
+    width: 20rem;
+    height: 20rem;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .info > h1,
+  .info > p,
+  .button,
+  .recent-posts .top > h2 {
+    text-align: center;
+  }
+
+  /* main content  */
+  .post-container,
+  .recent-posts {
+    flex-direction: column;
+    align-items: center;
+  }
+  .recent-posts .post {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .top {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .recent-posts .top > a {
+    display: none;
+  }
+
+  .work {
+    display: none;
+  }
+  .work:first-of-type {
+    display: block;
+  }
+  .work article > img {
+    margin: 0 auto 1rem;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .work article {
+    flex-direction: column;
+  }
+  .work h2 {
+    font-size: var(--post-title-font-size);
+    font-family: var(--bold-font);
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .socials > ul {
+    justify-content: center;
+  }
+  .copyright {
+    text-align: center;
+  }
+}
